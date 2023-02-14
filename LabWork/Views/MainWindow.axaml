@@ -1,0 +1,73 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:LabWork.ViewModels"
+        xmlns:avaloniaGif="clr-namespace:LabWork.AvaloniaGIF"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        mc:Ignorable="d"
+        x:Class="LabWork.Views.MainWindow"
+        PointerMoved="Window_OnPointerMoved"
+        Title="{Binding Title}">
+
+  <Window.DataContext>
+    <vm:MainWindowViewModel/>
+  </Window.DataContext>
+
+  <!--Декорации Окна-->
+  <Border Classes="windowDecorate" PointerPressed="TitleBarPanel_OnPointerPressed">
+    <Grid ColumnDefinitions="1*,5*" RowDefinitions="30,1*">
+
+      <!--Фон-->
+      <Border Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="2" CornerRadius="10" Background="{Binding SecondBackGroundWindow}" BoxShadow="0 0 4 2 Black">
+
+      </Border>
+      <!--Фон-->
+
+      <StackPanel x:Name="TitleBarPanel" Classes="titleBar" GotFocus="TitleBarPanel_OnGotFocus" LostFocus="TitleBarPanel_OnLostFocus" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FlowDirection="RightToLeft">
+        <Button Classes="titleBarButton" Click="ExitWindow_OnClick" ToolTip.Tip="Закрыть" HotKey="F1">
+          <avaloniaGif:GifImage SourceUriRaw="{Binding ExitGif}"
+                              Stretch="Fill"
+                              StretchDirection="Both"/>
+        </Button>
+
+        <Button Classes="titleBarButton" Click="HideWindow_OnClick" ToolTip.Tip="Свернуть" HotKey="F2">
+          <avaloniaGif:GifImage SourceUriRaw="{Binding HideGif}"
+                                Stretch="Fill"
+                                StretchDirection="Both"/>
+        </Button>
+      </StackPanel>
+
+      <!--Декорации-->
+
+      <!--Контент-->
+      <Border x:Name="MenuUser" Classes="menu" Grid.Row="0" Grid.RowSpan="2"  Grid.Column="0" Padding="7,7,7,0" BoxShadow="0 0 4 2 Black">
+
+        <DockPanel>
+
+          <StackPanel Orientation="Vertical" DockPanel.Dock="Top">
+
+            <Border Height="100"/>
+
+            <Border CornerRadius="5" BoxShadow="0 0 8 4 Black">
+              <StackPanel>
+                <Border BorderThickness="1,1,1,0" BorderBrush="Cyan" CornerRadius="5,5,0,0">
+                  <TextBlock Text="МЕНЮ" Height="50" FontSize="19" VerticalAlignment="Bottom" Foreground="Cyan"/>
+                </Border>
+
+                <Button x:Name="LabWork12" Classes="menuButton" Content="12 Лаба" ToolTip.Tip="12" Click="LabWork12_OnClick_OnClick"/>
+                <Button x:Name="LabWork14" Classes="menuButton" Content="14 Лаба" ToolTip.Tip="14" Click="LabWork14_OnClick"/>
+
+                <Border BorderThickness="1,0,1,1" BorderBrush="Cyan" CornerRadius="0,0,5,5" Height="50"/>
+              </StackPanel>
+            </Border>
+          </StackPanel>
+        </DockPanel>
+      </Border>
+
+      <TransitioningContentControl Grid.Row="1"  Grid.Column="1" Content="{Binding Page}"/>
+      <!--Контент-->
+
+    </Grid>
+  </Border>
+</Window>

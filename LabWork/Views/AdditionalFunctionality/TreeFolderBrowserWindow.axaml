@@ -1,0 +1,47 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:avaloniaGif="clr-namespace:LabWork.AvaloniaGIF"
+        mc:Ignorable="d"
+        x:Class="LabWork.Views.AdditionalFunctionality.TreeFolderBrowserWindow"
+        Title="{Binding Title}"
+        Width="400"
+        Height="800"
+        PointerMoved="Window_OnPointerMoved">
+
+  <Border Classes="windowDecorate" PointerPressed="TitleBarPanel_OnPointerPressed">
+    <Grid ColumnDefinitions="1*,5*" RowDefinitions="30,1*">
+
+      <!--Фон-->
+      <Border Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="2" CornerRadius="10" Background="{Binding SecondBackGroundWindow}" BoxShadow="0 0 4 2 Black">
+
+      </Border>
+      <!--Фон-->
+
+      <StackPanel x:Name="TitleBarPanel" Classes="titleBar" GotFocus="TitleBarPanel_OnGotFocus" LostFocus="TitleBarPanel_OnLostFocus" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FlowDirection="RightToLeft">
+        <Button Classes="titleBarButton" Click="ExitAdditionalFunctionality_OnClick" ToolTip.Tip="Закрыть" HotKey="F1">
+          <avaloniaGif:GifImage SourceUriRaw="{Binding ExitGif}"
+                                Stretch="Fill"
+                                StretchDirection="Both"/>
+        </Button>
+
+        <Button Classes="titleBarButton" Click="HideWindow_OnClick" ToolTip.Tip="Свернуть" HotKey="F2">
+          <avaloniaGif:GifImage SourceUriRaw="{Binding HideGif}"
+                                Stretch="Fill"
+                                StretchDirection="Both"/>
+        </Button>
+      </StackPanel>
+      
+      <TreeView x:Name="BrowseFolderCustom" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Items="{Binding Items}"
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SelectionChanged="BrowseFolderCustom_OnSelectionChanged">
+        <TreeView.ItemTemplate>
+          <TreeDataTemplate ItemsSource="{Binding SubFolders}">
+            <TextBlock Text="{Binding FolderName}"/>
+          </TreeDataTemplate>
+        </TreeView.ItemTemplate>
+      </TreeView>
+
+    </Grid>
+    </Border>
+</Window>
