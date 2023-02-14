@@ -1,19 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.IO;
-using System.Linq;
-using System.Reactive.Concurrency;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Avalonia.Controls;
-using Avalonia.Threading;
-using LabWork.Models;
-using ReactiveUI;
-using static System.Security.Principal.WindowsIdentity;
-using static LabWork.ViewModels.AdditionalFunctionality.TreeFolderBrowserWindowViewModel;
-namespace LabWork.ViewModels.PageLabWork
+﻿namespace LabWork.ViewModels.PageLabWork
 {
     internal class LabWork12ViewModel : ViewModelBase
     {
@@ -41,8 +26,8 @@ namespace LabWork.ViewModels.PageLabWork
 
         #region FolderNameNPChanged
 
-        private string folderName = "Каталог не определён";
-        internal string FolderName
+        private string? folderName = "Каталог не определён";
+        internal string? FolderName
         {
             get => folderName;
             set => this.RaiseAndSetIfChanged(ref folderName, value);

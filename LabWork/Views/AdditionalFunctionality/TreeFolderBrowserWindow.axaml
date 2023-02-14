@@ -4,12 +4,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:avaloniaGif="clr-namespace:LabWork.AvaloniaGIF"
         mc:Ignorable="d"
+        xmlns:vm="using:LabWork.ViewModels.AdditionalFunctionality"
         x:Class="LabWork.Views.AdditionalFunctionality.TreeFolderBrowserWindow"
         Title="{Binding Title}"
         Width="400"
         Height="800"
         PointerMoved="Window_OnPointerMoved">
-
+ 
   <Border Classes="windowDecorate" PointerPressed="TitleBarPanel_OnPointerPressed">
     <Grid ColumnDefinitions="1*,5*" RowDefinitions="30,1*">
 
@@ -20,7 +21,7 @@
       <!--Фон-->
 
       <StackPanel x:Name="TitleBarPanel" Classes="titleBar" GotFocus="TitleBarPanel_OnGotFocus" LostFocus="TitleBarPanel_OnLostFocus" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FlowDirection="RightToLeft">
-        <Button Classes="titleBarButton" Click="ExitAdditionalFunctionality_OnClick" ToolTip.Tip="Закрыть" HotKey="F1">
+        <Button Classes="titleBarButton" Click="ExitWindow_OnClick" ToolTip.Tip="Закрыть" HotKey="F1">
           <avaloniaGif:GifImage SourceUriRaw="{Binding ExitGif}"
                                 Stretch="Fill"
                                 StretchDirection="Both"/>
@@ -37,7 +38,7 @@
                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SelectionChanged="BrowseFolderCustom_OnSelectionChanged">
         <TreeView.ItemTemplate>
           <TreeDataTemplate ItemsSource="{Binding SubFolders}">
-            <TextBlock Text="{Binding FolderName}"/>
+            <TextBlock Text="{Binding FolderName}" DockPanel.Dock="Right" TextAlignment="Left"/>
           </TreeDataTemplate>
         </TreeView.ItemTemplate>
       </TreeView>

@@ -25,7 +25,7 @@
       <!--Фон-->
 
       <StackPanel x:Name="TitleBarPanel" Classes="titleBar" GotFocus="TitleBarPanel_OnGotFocus" LostFocus="TitleBarPanel_OnLostFocus" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FlowDirection="RightToLeft">
-        <Button Classes="titleBarButton" Click="ExitWindow_OnClick" ToolTip.Tip="Закрыть" HotKey="F1">
+        <Button Classes="titleBarButton" Click="ExitApplication_OnClick" ToolTip.Tip="Закрыть" HotKey="F1">
           <avaloniaGif:GifImage SourceUriRaw="{Binding ExitGif}"
                               Stretch="Fill"
                               StretchDirection="Both"/>

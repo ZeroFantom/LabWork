@@ -1,9 +1,3 @@
-using Avalonia;
-using Avalonia.Controls.ApplicationLifetimes;
-using Avalonia.Markup.Xaml;
-using LabWork.ViewModels;
-using LabWork.Views;
-
 namespace LabWork
 {
     public partial class App : Application

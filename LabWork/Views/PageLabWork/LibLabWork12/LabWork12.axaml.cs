@@ -1,13 +1,4 @@
-using Avalonia.Controls;
-using Avalonia.Interactivity;
-using LabWork.Models;
-using LabWork.ViewModels.AdditionalFunctionality;
-using LabWork.ViewModels.PageLabWork;
-using LabWork.Views.AdditionalFunctionality;
-using static LabWork.ViewModels.PageLabWork.LabWork12ViewModel;
-using static LabWork.ViewModels.AdditionalFunctionality.TreeFolderBrowserWindowViewModel;
-
-namespace LabWork.Views.PageLabWork
+namespace LabWork.Views.PageLabWork.LibLabWork12
 {
     public partial class LabWork12 : UserControl
     {

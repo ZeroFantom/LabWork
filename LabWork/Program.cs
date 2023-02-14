@@ -1,6 +1,3 @@
-using Avalonia;
-using Avalonia.ReactiveUI;
-
 namespace LabWork
 {
 

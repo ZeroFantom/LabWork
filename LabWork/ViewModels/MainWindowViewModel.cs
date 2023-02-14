@@ -1,10 +1,3 @@
-using ReactiveUI;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Avalonia.Controls;
-using LabWork.ViewModels.PageLabWork;
-
 namespace LabWork.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase

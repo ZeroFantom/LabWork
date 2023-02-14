@@ -1,11 +1,3 @@
-using Avalonia.Controls;
-using Avalonia.Input;
-using Avalonia.Interactivity;
-using LabWork.Models;
-using LabWork.ViewModels;
-using LabWork.ViewModels.PageLabWork;
-using LabWork.Views.PageLabWork;
-using static LabWork.ViewModels.MainWindowViewModel;
 namespace LabWork.Views
 {
     public partial class MainWindow : CustomUI

@@ -74,4 +74,38 @@
     <PackageReference Include="Mvvm.CommonInteractions.Avalonia" Version="1.0.64" />
     <PackageReference Include="XamlNameReferenceGenerator" Version="1.5.1" />
   </ItemGroup>
+  <ItemGroup>
+    <Using Include="Avalonia" />
+    <Using Include="Avalonia.Controls" />
+    <Using Include="Avalonia.Controls.ApplicationLifetimes" />
+    <Using Include="Avalonia.Controls.Templates" />
+    <Using Include="Avalonia.Input" />
+    <Using Include="Avalonia.Interactivity" />
+    <Using Include="Avalonia.Markup.Xaml" />
+    <Using Include="Avalonia.Media" />
+    <Using Include="Avalonia.ReactiveUI" />
+    <Using Include="Avalonia.Threading" />
+    <Using Include="LabWork.Models" />
+    <Using Include="LabWork.ViewModels" />
+    <Using Include="LabWork.ViewModels.AdditionalFunctionality" />
+    <Using Include="LabWork.ViewModels.AdditionalFunctionality.TreeFolderBrowserWindowViewModel">
+      <Static>True</Static>
+    </Using>
+    <Using Include="LabWork.ViewModels.MainWindowViewModel">
+      <Static>True</Static>
+    </Using>
+    <Using Include="LabWork.ViewModels.PageLabWork" />
+    <Using Include="LabWork.ViewModels.PageLabWork.LabWork12ViewModel">
+      <Static>True</Static>
+    </Using>
+    <Using Include="LabWork.Views" />
+    <Using Include="LabWork.Views.AdditionalFunctionality" />
+    <Using Include="LabWork.Views.PageLabWork.LibLabWork12" />
+    <Using Include="ReactiveUI" />
+    <Using Include="System.Collections.ObjectModel" />
+    <Using Include="System.IO" />
+    <Using Include="System.Windows.SystemParameters">
+      <Static>True</Static>
+    </Using>
+  </ItemGroup>
 </Project>

@@ -1,7 +1,3 @@
-using Avalonia.Controls;
-using Avalonia.Controls.Templates;
-using LabWork.ViewModels;
-
 namespace LabWork
 {
 

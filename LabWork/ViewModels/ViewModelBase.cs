@@ -1,11 +1,3 @@
-using Avalonia.Media;
-using ReactiveUI;
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Text;
-using static System.Windows.SystemParameters;
-
 namespace LabWork.ViewModels
 {
     public class ViewModelBase : ReactiveObject
