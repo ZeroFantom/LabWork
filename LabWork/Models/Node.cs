@@ -1,18 +1,27 @@
-﻿namespace LabWork.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace LabWork.Models
 {
     internal struct Node
     {
+        private static string RootFolder 
+            => Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
         internal ObservableCollection<Node> SubFolders { get; set; }
 
         internal string? FolderName { get; }
         internal string FullPath { get; }
 
-        internal Node(string fullPath)
+        internal Node([Required] string path)
         {
-            FullPath = fullPath;
+            FullPath = path;
             SubFolders = GetSubfolders(FullPath);
-            var targetDir = new DirectoryInfo(fullPath);
+            var targetDir = new DirectoryInfo(FullPath);
             FolderName = targetDir.Name;
+        }
+
+        public Node() : this(RootFolder)
+        {
         }
 
         private ObservableCollection<Node> GetSubfolders(string strPath)

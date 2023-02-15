@@ -1,4 +1,6 @@
-﻿namespace LabWork.ViewModels.PageLabWork
+﻿using DynamicData;
+
+namespace LabWork.ViewModels.PageLabWork
 {
     internal class LabWork12ViewModel : ViewModelBase
     {
@@ -15,6 +17,8 @@
         private bool _isEnabledCreationDateFile = false;
         internal bool IsEnabledCreationDateFile { get => _isEnabledCreationDateFile; set => this.RaiseAndSetIfChanged(ref _isEnabledCreationDateFile, value); }
 
+        private bool _isEnabledDuplicate = false;
+        internal bool IsEnabledDuplicate { get => _isEnabledDuplicate; set => this.RaiseAndSetIfChanged(ref _isEnabledDuplicate, value); }
         #endregion
 
 
@@ -43,15 +47,37 @@
             InstancelabWork12ViewModel = this;
         }
 
-        
-        internal void FindFile(DataGrid dataGrid, string folder, string fileName)
+
+        internal void FindFile(string folder, string fileName)
         {
-            dataGrid.Items = Directory.GetFiles(folder, "*" + fileName + "*.*", new EnumerationOptions()
+            if (!IsEnabledFileSize)
             {
-                RecurseSubdirectories = IsRecurseSubdirectories
-            }).Select(x => new FileInfo(x))
-                .Where(x=>!IsEnabledCreationDateFile || (x.CreationTime >= MinDataCreationFile))
-                .Where(x=>!IsEnabledFileSize || ( (x.Length / 1024) >= MinSizeFile && (x.Length / 1024) <= MaxSizeFile));
+                MinSizeFile = 0;
+                MaxSizeFile = 0;
+            }
+
+            if (!IsEnabledCreationDateFile)
+            {
+                MinDataCreationFile = DateTime.Now;
+            }
+
+            Data.ObjectDataReport.AddRange(!IsEnabledDuplicate
+                ? Directory.GetFiles(folder, "*" + fileName + "*.*",
+                        new EnumerationOptions()
+                        {
+                            RecurseSubdirectories = IsRecurseSubdirectories
+                        }).Select(x => new FileInfo(x))
+                    .Where(x => !IsEnabledCreationDateFile || (x.CreationTime >= MinDataCreationFile))
+                    .Where(x => !IsEnabledFileSize || ((x.Length / 1024) >= MinSizeFile && (x.Length / 1024) <= MaxSizeFile))
+                : Directory.GetFiles(folder, fileName + ".*", new EnumerationOptions()
+                {
+                    RecurseSubdirectories = IsRecurseSubdirectories
+                }).Select(x=> new FileInfo(x))
+                    .Where(x => !IsEnabledDuplicate || x.Name.Equals(fileName + $"{x.Extension}", StringComparison.CurrentCulture))
+                    .Where(x => !IsEnabledCreationDateFile || x.CreationTime.Date == MinDataCreationFile.Date)
+                    .Where(x => !IsEnabledFileSize || (x.Length / 1024) == MinSizeFile)
+
+                );
         }
 
     }

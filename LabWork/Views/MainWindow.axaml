@@ -55,8 +55,8 @@
                   <TextBlock Text="МЕНЮ" Height="50" FontSize="19" VerticalAlignment="Bottom" Foreground="Cyan"/>
                 </Border>
 
-                <Button x:Name="LabWork12" Classes="menuButton" Content="12 Лаба" ToolTip.Tip="12" Click="LabWork12_OnClick_OnClick"/>
-                <Button x:Name="LabWork14" Classes="menuButton" Content="14 Лаба" ToolTip.Tip="14" Click="LabWork14_OnClick"/>
+                <Button x:Name="LabWork12_13" Classes="menuButton" Content="Псевдо Проводник" ToolTip.Tip="12" Click="LabWork12_OnClick_OnClick"/>
+                <Button x:Name="DataReportButton" Classes="menuButton" Content="Отчёт" ToolTip.Tip="14" Click="DataReport_OnClick"/>
 
                 <Border BorderThickness="1,0,1,1" BorderBrush="Cyan" CornerRadius="0,0,5,5" Height="50"/>
               </StackPanel>

@@ -1,0 +1,49 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:avaloniaGif="clr-namespace:LabWork.AvaloniaGIF"
+        mc:Ignorable="d"
+        x:Class="LabWork.Views.AdditionalFunctionality.DataReport"
+        Title="{Binding Title}"
+        PointerMoved="Window_OnPointerMoved">
+
+  <Border Classes="windowDecorate" PointerPressed="TitleBarPanel_OnPointerPressed">
+    <Grid ColumnDefinitions="1*,10*,1*" RowDefinitions="30,1*,5*,1*">
+
+      <!--Фон-->
+      <Border Grid.Row="0" Grid.RowSpan="4" Grid.Column="0" Grid.ColumnSpan="3" CornerRadius="10" Background="{Binding SecondBackGroundWindow}" BoxShadow="0 0 4 2 Black">
+
+      </Border>
+      <!--Фон-->
+
+      <StackPanel x:Name="TitleBarPanel" Classes="titleBar" GotFocus="TitleBarPanel_OnGotFocus" LostFocus="TitleBarPanel_OnLostFocus" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" FlowDirection="RightToLeft">
+        <Button Classes="titleBarButton" Click="ExitWindow_OnClick" ToolTip.Tip="Закрыть" HotKey="F1">
+          <avaloniaGif:GifImage SourceUriRaw="{Binding ExitGif}"
+                                Stretch="Fill"
+                                StretchDirection="Both"/>
+        </Button>
+
+        <Button Classes="titleBarButton" Click="HideWindow_OnClick" ToolTip.Tip="Свернуть" HotKey="F2">
+          <avaloniaGif:GifImage SourceUriRaw="{Binding HideGif}"
+                                Stretch="Fill"
+                                StretchDirection="Both"/>
+        </Button>
+      </StackPanel>
+
+      <Button Grid.Row="1" Grid.Column="1" Height="40" Width="400" Classes="menuButton" Content="Удалить старую информацию из отчёта" Click="SetDataReport_OnClick"/>
+        
+
+      <DataGrid Grid.Row="2" Grid.Column="1" x:Name="TableData" AutoGenerateColumns="True" CanUserReorderColumns="True" CanUserResizeColumns="True" CanUserSortColumns="True"/>
+
+      <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="3">
+        <Button Classes="menuButton" Content="&#x2B9C;" Click="PageDown_OnClick"/>
+        <Border Width="100"/>
+        <TextBox x:Name="PageBox" Text="0" TextAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" TextChanged="PageChanged_OnTextChanged"/>
+        <Border Width="100"/>
+        <Button Classes="menuButton" Content="&#x2B9E;" Click="PageUp_OnClick"/>
+      </StackPanel>
+
+    </Grid>
+  </Border>
+</Window>

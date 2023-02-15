@@ -2,7 +2,6 @@
 {
     internal class TreeFolderBrowserWindowViewModel : ViewModelBase
     {
-        internal string RootFolder => Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
         public new string Title => "Ветка Директорий";
         internal static TreeFolderBrowserWindowViewModel InstanceBrowserWindowViewModel { get; private set; }
         internal ObservableCollection<Node> Items { get; } = new();
@@ -11,7 +10,7 @@
         internal TreeFolderBrowserWindowViewModel()
         {
             Task.Run(async () =>{
-                var rootNode = new Node(RootFolder);
+                var rootNode = new Node();
 
                 await Dispatcher.UIThread.InvokeAsync(() =>
                 {

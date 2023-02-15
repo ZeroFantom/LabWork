@@ -13,9 +13,10 @@ namespace LabWork.Views
                 DataContext = new LabWork12ViewModel()
             };
 
-        private void LabWork14_OnClick(object? sender, RoutedEventArgs e)
-        {
-
-        }
+        private void DataReport_OnClick(object? sender, RoutedEventArgs e)
+            => new DataReport
+            {
+                DataContext = new DataReportViewModel()
+            }.Show();
     }
 }
