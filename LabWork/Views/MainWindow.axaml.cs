@@ -1,3 +1,5 @@
+using LabWork12 = LabWork.Views.PageLabWork.LibLabWork12_14.LabWork12;
+
 namespace LabWork.Views
 {
     public partial class MainWindow : CustomUI

@@ -86,6 +86,7 @@
     <Using Include="Avalonia.Media" />
     <Using Include="Avalonia.ReactiveUI" />
     <Using Include="Avalonia.Threading" />
+    <Using Include="DynamicData" />
     <Using Include="LabWork.Models" />
     <Using Include="LabWork.ViewModels" />
     <Using Include="LabWork.ViewModels.AdditionalFunctionality" />
@@ -101,7 +102,6 @@
     </Using>
     <Using Include="LabWork.Views" />
     <Using Include="LabWork.Views.AdditionalFunctionality" />
-    <Using Include="LabWork.Views.PageLabWork.LibLabWork12" />
     <Using Include="ReactiveUI" />
     <Using Include="System.Collections.ObjectModel" />
     <Using Include="System.IO" />

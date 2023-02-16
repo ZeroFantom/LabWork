@@ -1,7 +1,4 @@
-using Avalonia.Controls.Primitives;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
-
-namespace LabWork.Views.PageLabWork.LibLabWork12
+namespace LabWork.Views.PageLabWork.LibLabWork12_14
 {
     public partial class LabWork12 : UserControl
     {

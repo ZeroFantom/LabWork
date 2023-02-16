@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace LabWork.Models
+﻿namespace LabWork.Models
 {
     internal struct Node
     {
@@ -12,7 +10,7 @@ namespace LabWork.Models
         internal string? FolderName { get; }
         internal string FullPath { get; }
 
-        internal Node([Required] string path)
+        internal Node(string path)
         {
             FullPath = path;
             SubFolders = GetSubfolders(FullPath);

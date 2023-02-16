@@ -5,11 +5,11 @@ namespace LabWork.ViewModels
         internal static MainWindowViewModel InstaMainWindowViewModel;
         internal new string Title => "Главная страница";
 
-        private UserControl? page = null;
+        private UserControl? page;
         internal UserControl? Page
         {
             get => page;
-            set { this.RaiseAndSetIfChanged(ref page, value); }
+            set => this.RaiseAndSetIfChanged(ref page, value);
         }
 
         public MainWindowViewModel()

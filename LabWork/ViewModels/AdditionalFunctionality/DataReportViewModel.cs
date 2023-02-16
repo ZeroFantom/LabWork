@@ -4,7 +4,7 @@
     {
         internal static DataReportViewModel InstanceDataReportViewModel { get; private set; }
 
-        public new string Title => "Отчёт";
+        internal new string Title => "Отчёт";
 
         internal DataReportViewModel()
         {

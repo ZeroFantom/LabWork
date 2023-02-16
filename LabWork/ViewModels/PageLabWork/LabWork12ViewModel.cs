@@ -1,6 +1,4 @@
-﻿using DynamicData;
-
-namespace LabWork.ViewModels.PageLabWork
+﻿namespace LabWork.ViewModels.PageLabWork
 {
     internal class LabWork12ViewModel : ViewModelBase
     {
