@@ -59,23 +59,15 @@
                 MinDataCreationFile = DateTime.Now;
             }
 
-            Data.ObjectDataReport.AddRange(!IsEnabledDuplicate
-                ? Directory.GetFiles(folder, "*" + fileName + "*.*",
-                        new EnumerationOptions()
-                        {
-                            RecurseSubdirectories = IsRecurseSubdirectories
-                        }).Select(x => new FileInfo(x))
-                    .Where(x => !IsEnabledCreationDateFile || (x.CreationTime >= MinDataCreationFile))
-                    .Where(x => !IsEnabledFileSize || ((x.Length / 1024) >= MinSizeFile && (x.Length / 1024) <= MaxSizeFile))
-                : Directory.GetFiles(folder, fileName + ".*", new EnumerationOptions()
-                {
-                    RecurseSubdirectories = IsRecurseSubdirectories
-                }).Select(x=> new FileInfo(x))
-                    .Where(x => !IsEnabledDuplicate || x.Name.Equals(fileName + $"{x.Extension}", StringComparison.CurrentCulture))
-                    .Where(x => !IsEnabledCreationDateFile || x.CreationTime.Date == MinDataCreationFile.Date)
-                    .Where(x => !IsEnabledFileSize || (x.Length / 1024) == MinSizeFile)
-
-                );
+            Data.ObjectDataReport.AddRange(Directory.EnumerateFiles(folder, "*" + fileName + "*.*",
+                    new EnumerationOptions { RecurseSubdirectories = IsRecurseSubdirectories })
+                .Select(x => new FileInfo(x))
+                .Where(x => (!IsEnabledDuplicate && (!IsEnabledCreationDateFile || (x.CreationTime >= MinDataCreationFile)) &&
+                             (!IsEnabledFileSize || ((x.Length / 1024) >= MinSizeFile && (x.Length / 1024) <= MaxSizeFile))) ||
+                            (IsEnabledDuplicate && x.Name.Equals(fileName + x.Extension, StringComparison.CurrentCulture) &&
+                             (!IsEnabledCreationDateFile || x.CreationTime.Date == MinDataCreationFile.Date) &&
+                             (!IsEnabledFileSize || (x.Length / 1024) == MinSizeFile)))
+            );
         }
 
     }
