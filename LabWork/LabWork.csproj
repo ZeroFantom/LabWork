@@ -97,16 +97,22 @@
       <Static>True</Static>
     </Using>
     <Using Include="LabWork.ViewModels.PageLabWork" />
-    <Using Include="LabWork.ViewModels.PageLabWork.LabWork12ViewModel">
+    <Using Include="LabWork.ViewModels.PageLabWork.LabWork12_14ViewModel">
       <Static>True</Static>
     </Using>
     <Using Include="LabWork.Views" />
     <Using Include="LabWork.Views.AdditionalFunctionality" />
+    <Using Include="LabWork.Views.PageLabWork" />
     <Using Include="ReactiveUI" />
     <Using Include="System.Collections.ObjectModel" />
     <Using Include="System.IO" />
     <Using Include="System.Windows.SystemParameters">
       <Static>True</Static>
     </Using>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\PageLabWork\LabWork12_14.axaml.cs">
+      <DependentUpon>LabWork12_14.axaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

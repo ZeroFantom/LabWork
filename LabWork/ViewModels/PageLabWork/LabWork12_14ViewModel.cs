@@ -1,8 +1,8 @@
 ﻿namespace LabWork.ViewModels.PageLabWork
 {
-    internal class LabWork12ViewModel : ViewModelBase
+    internal class LabWork12_14ViewModel : ViewModelBase
     {
-        internal static LabWork12ViewModel InstancelabWork12ViewModel { get; private set; }
+        internal static LabWork12_14ViewModel InstancelabWork12_14ViewModel { get; private set; }
 
         #region ToggleButtonOptions
 
@@ -40,9 +40,9 @@
         #endregion
 
 
-        internal LabWork12ViewModel()
+        internal LabWork12_14ViewModel()
         {
-            InstancelabWork12ViewModel = this;
+            InstancelabWork12_14ViewModel = this;
         }
 
 

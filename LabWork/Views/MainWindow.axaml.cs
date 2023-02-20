@@ -1,5 +1,3 @@
-using LabWork12 = LabWork.Views.PageLabWork.LibLabWork12_14.LabWork12;
-
 namespace LabWork.Views
 {
     public partial class MainWindow : CustomUI
@@ -10,9 +8,9 @@ namespace LabWork.Views
         }
 
         private void LabWork12_OnClick_OnClick(object? sender, RoutedEventArgs e)
-            => InstaMainWindowViewModel.Page = new LabWork12
+            => InstaMainWindowViewModel.Page = new LabWork12_14
             {
-                DataContext = new LabWork12ViewModel()
+                DataContext = new LabWork12_14ViewModel()
             };
 
         private void DataReport_OnClick(object? sender, RoutedEventArgs e)
@@ -20,5 +18,18 @@ namespace LabWork.Views
             {
                 DataContext = new DataReportViewModel()
             }.Show();
+
+        private void LabWork15_OnClick(object? sender, RoutedEventArgs e)
+        {
+            var lab15 = new LabWork15ViewModel
+            {
+                Owner = this
+            };
+
+            InstaMainWindowViewModel.Page = new LabWork15
+            {
+                DataContext = lab15
+            };
+        }
     }
 }

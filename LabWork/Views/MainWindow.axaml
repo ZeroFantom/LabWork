@@ -56,6 +56,7 @@
                 </Border>
 
                 <Button x:Name="LabWork12_13" Classes="menuButton" Content="Псевдо Проводник" ToolTip.Tip="12" Click="LabWork12_OnClick_OnClick"/>
+                <Button x:Name="LabWork15" Classes="menuButton" Content="Презентация фоток" ToolTip.Tip="14" Click="LabWork15_OnClick"/>
                 <Button x:Name="DataReportButton" Classes="menuButton" Content="Отчёт" ToolTip.Tip="14" Click="DataReport_OnClick"/>
 
                 <Border BorderThickness="1,0,1,1" BorderBrush="Cyan" CornerRadius="0,0,5,5" Height="50"/>

@@ -1,0 +1,34 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LabWork.Views.PageLabWork.LabWork15"
+             Padding="6">
+  <Grid ColumnDefinitions="1*,5*,1*" RowDefinitions="30,*">
+
+    <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text ="{Binding InfoFile}"/>
+    <Border Grid.Row="0" Grid.Column="2" CornerRadius="5" BoxShadow="0 0 8 4 Black" VerticalAlignment="Center" Background="{Binding BackGroundWindow}" HorizontalAlignment="Center" DockPanel.Dock="Left">
+      <DockPanel>
+        <Menu DockPanel.Dock="Top">
+          <MenuItem Header="Файл">
+            <MenuItem Header="Открыть" Click="MenuItemOpenFile_OnClick"/>
+            <Separator/>
+            <MenuItem Header="Выход" Click="MenuItemExit_OnClick"/>
+          </MenuItem>
+          <MenuItem Header="Вид">
+            <MenuItem Header="200%" Click="MenuItemMax_OnClick"/>
+            <MenuItem Header="100%" Click="MenuItemHight_OnClick"/>
+            <MenuItem Header="50%" Click="MenuItemLow_OnClick"/>
+            <MenuItem Header="Во весь экран..." Click="MenuItemFull_OnClick"/>
+          </MenuItem>
+        </Menu>
+      </DockPanel>
+    </Border>
+    <ScrollViewer Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1">
+    <Viewbox Height="{Binding HeightImage}" Width="{Binding WidthImage}" Stretch="Fill" StretchDirection="Both" PointerPressed="InputElement_OnPointerPressed">
+      <Image Source="{Binding ImageFile}"/>
+    </Viewbox>
+    </ScrollViewer>
+  </Grid>
+</UserControl>

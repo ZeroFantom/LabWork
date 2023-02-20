@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:local="using:LabWork.ViewModels.PageLabWork"
-             x:Class="LabWork.Views.PageLabWork.LibLabWork12_14.LabWork12"
+             x:Class="LabWork.Views.PageLabWork.LabWork12_14"
              Padding="6">
   
   <Grid ColumnDefinitions="1*,5*,1*" RowDefinitions="20,*">
