@@ -20,6 +20,9 @@
     <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
   </PropertyGroup>
   <ItemGroup>
+    <Content Remove="C:\Users\User\.nuget\packages\metalama.linqpad\2023.0.105-rc\contentFiles\any\net6.0-windows7.0\Connection.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Remove=".gitignore" />
     <None Remove="Assets\eays.gif" />
     <None Remove="Assets\exit.gif" />
@@ -50,6 +53,7 @@
     <TrimmableAssembly Include="Avalonia.Themes.Default" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="Avalonia" Version="11.0.0-preview5" />
     <PackageReference Include="Avalonia.Controls.ColorPicker" Version="11.0.0-preview5" />
     <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.0.0-preview5" />
@@ -97,9 +101,6 @@
       <Static>True</Static>
     </Using>
     <Using Include="LabWork.ViewModels.PageLabWork" />
-    <Using Include="LabWork.ViewModels.PageLabWork.LabWork12_14ViewModel">
-      <Static>True</Static>
-    </Using>
     <Using Include="LabWork.Views" />
     <Using Include="LabWork.Views.AdditionalFunctionality" />
     <Using Include="LabWork.Views.PageLabWork" />
@@ -111,8 +112,8 @@
     </Using>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Views\PageLabWork\LabWork12_14.axaml.cs">
-      <DependentUpon>LabWork12_14.axaml</DependentUpon>
+    <Compile Update="Views\PageLabWork\LabWork12_14_21.axaml.cs">
+      <DependentUpon>LabWork12_14_21.axaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>

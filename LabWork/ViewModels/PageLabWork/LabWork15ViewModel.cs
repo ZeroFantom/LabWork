@@ -10,6 +10,8 @@ namespace LabWork.ViewModels.PageLabWork
 {
     internal class LabWork15ViewModel : ViewModelBase
     {
+        internal static LabWork15ViewModel InstancelabWork15ViewModel { get; private set; } = new();
+
         public Window? Owner = null;
         private string infoFile = "Файл не выбран!";
 
@@ -42,7 +44,6 @@ namespace LabWork.ViewModels.PageLabWork
             set => this.RaiseAndSetIfChanged(ref imageBitmap, value);
         }
 
-        internal static LabWork15ViewModel InstancelabWork15ViewModel;
         internal LabWork15ViewModel()
         {
             InstancelabWork15ViewModel = this;

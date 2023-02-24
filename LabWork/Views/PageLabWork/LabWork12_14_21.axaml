@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:local="using:LabWork.ViewModels.PageLabWork"
-             x:Class="LabWork.Views.PageLabWork.LabWork12_14"
+             x:Class="LabWork.Views.PageLabWork.LabWork12_14_21"
              Padding="6">
   
   <Grid ColumnDefinitions="1*,5*,1*" RowDefinitions="20,*">
@@ -23,20 +23,26 @@
             </StackPanel>
             <Separator/>
             <StackPanel Orientation="Horizontal">
+              <TextBlock Text="    Hash файла для поиска дубликатов:" FontSize="16"/>
+              <TextBox x:Name="FileHashBox" Text="{Binding FileHash}" FontSize="16" IsEnabled="{Binding IsEnabledHash}"/>
+            </StackPanel>
+            <Separator/>
+            <StackPanel Orientation="Horizontal">
               <TextBlock Text="    Макс. Размер Файла:" FontSize="16"/>
-              <TextBox x:Name="MaxSizeFileBox" FontSize="16" IsEnabled="{Binding IsEnabledFileSize}"/>
+              <TextBox x:Name="MaxSizeFileBox" Text="{Binding MaxSizeFile}" FontSize="16" IsEnabled="{Binding IsEnabledFileSize}"/>
             </StackPanel>
             <Separator/>
             <StackPanel Orientation="Horizontal">
               <TextBlock Text="    Мин. Размер Файла:" FontSize="16"/>
-              <TextBox x:Name="MinSizeFileBox" FontSize="16" IsEnabled="{Binding IsEnabledFileSize}"/>
+              <TextBox x:Name="MinSizeFileBox" Text="{Binding MinSizeFile}" FontSize="16" IsEnabled="{Binding IsEnabledFileSize}"/>
             </StackPanel>
             <Separator/>
           <StackPanel>
             <TextBlock Text="    Мин. Дата Создания" FontSize="16"/>
-            <DatePicker x:Name="DateTimePickerPanel" IsEnabled="{Binding IsEnabledCreationDateFile}" HorizontalAlignment="Center"/>
+            <DatePicker x:Name="DateTimePickerPanel" SelectedDate="{Binding MinDataCreationFile}" IsEnabled="{Binding IsEnabledCreationDateFile}" HorizontalAlignment="Center"/>
           </StackPanel>
           <Separator/>
+            <ToggleSwitch IsChecked="{Binding IsEnabledHash}" OffContent="Не рассчитывать хеш-сумму" OnContent="Рассчитать хеш-сумму и учесть её в расчётах других параметров"/>
             <ToggleSwitch IsChecked="{Binding IsEnabledFileSize}" OffContent="Учёт размера файла выключен" OnContent="Учёт размера файла включён"/>
             <ToggleSwitch IsChecked="{Binding IsRecurseSubdirectories}" OffContent="Поиск выполняется только в действующем каталоге" OnContent="Поиск выполняется в каталоге и всех его подкаталогах"/>
             <ToggleSwitch IsChecked="{Binding IsEnabledCreationDateFile}" OffContent="Ограничение на мин. время создания файла не учитывается" OnContent="Ограничение на мин. время создания файла учитывается"/>

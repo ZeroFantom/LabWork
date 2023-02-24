@@ -2,8 +2,8 @@
 {
     internal class TreeFolderBrowserWindowViewModel : ViewModelBase
     {
+        internal static TreeFolderBrowserWindowViewModel InstanceBrowserWindowViewModel { get; private set; } = new();
         internal new string Title => "Ветка Директорий";
-        internal static TreeFolderBrowserWindowViewModel InstanceBrowserWindowViewModel { get; private set; }
         internal ObservableCollection<Node> Items { get; } = new();
         internal Node SelectedNode { get; set; }
 

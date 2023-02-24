@@ -2,7 +2,7 @@ namespace LabWork.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        internal static MainWindowViewModel InstaMainWindowViewModel;
+        internal static MainWindowViewModel InstaMainWindowViewModel { get; set; } = new();
         internal new string Title => "Главная страница";
 
         private UserControl? page;

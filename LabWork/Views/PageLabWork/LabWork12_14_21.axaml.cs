@@ -1,8 +1,10 @@
+using static LabWork.ViewModels.PageLabWork.LabWork12_14_21ViewModel;
+
 namespace LabWork.Views.PageLabWork
 {
-    public partial class LabWork12_14 : UserControl
+    public partial class LabWork12_14_21 : UserControl
     {
-        public LabWork12_14()
+        public LabWork12_14_21()
         {
             InitializeComponent();
         }
@@ -17,13 +19,9 @@ namespace LabWork.Views.PageLabWork
         {
             try
             {
-                InstancelabWork12_14ViewModel.MaxSizeFile = long.Parse(MaxSizeFileBox.Text ?? "0");
-                InstancelabWork12_14ViewModel.MinSizeFile = long.Parse(MinSizeFileBox.Text ?? "0");
-                InstancelabWork12_14ViewModel.MinDataCreationFile = DateTimePickerPanel.SelectedDate?.DateTime ?? DateTime.Now;
-
-                InstancelabWork12_14ViewModel.FindFile(InstanceBrowserWindowViewModel.SelectedNode.FullPath, FileName.Text ?? string.Empty);
-                InstancelabWork12_14ViewModel.FolderName = InstanceBrowserWindowViewModel.SelectedNode.FolderName;
-
+                InstancelabWork121421ViewModel.FolderName = InstanceBrowserWindowViewModel.SelectedNode.FolderName;
+                InstancelabWork121421ViewModel.FindFile(InstanceBrowserWindowViewModel.SelectedNode.FullPath, FileName.Text ?? string.Empty);
+                
                 MessagesApp.System_Message("Данные в отчёте успешно обновлены!",FindButton,sender);
             }
             catch (Exception)

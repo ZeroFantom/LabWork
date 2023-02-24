@@ -2,7 +2,7 @@
 {
     internal class DataReportViewModel : ViewModelBase
     {
-        internal static DataReportViewModel InstanceDataReportViewModel { get; private set; }
+        internal static DataReportViewModel InstanceDataReportViewModel { get; private set; } = new();
 
         internal new string Title => "Отчёт";
 
