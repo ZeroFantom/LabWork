@@ -51,6 +51,11 @@ namespace LabWork.ViewModels
         internal Uri ExitGif => new("avares://LabWork/Assets/exit.gif", UriKind.RelativeOrAbsolute);
 
         /// <summary>
+        /// Гиф изображение значка закрытия приложения.
+        /// </summary>
+        internal Uri GenGif => new("avares://LabWork/Assets/GenPassword.gif", UriKind.RelativeOrAbsolute);
+
+        /// <summary>
         /// Изображение фона приложения.
         /// </summary>
         internal Uri WindowBackGround => new("avares://LabWork/Assets/loadAndBackgroundWindow.gif",

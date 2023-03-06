@@ -27,6 +27,7 @@
     <None Remove="Assets\eays.gif" />
     <None Remove="Assets\exit.gif" />
     <None Remove="Assets\FontFamily\0.ttf" />
+    <None Remove="Assets\GenPassword.gif" />
     <None Remove="Assets\hide.gif" />
     <None Remove="Assets\load.gif" />
     <None Remove="Assets\loadAndBackgroundWindow.gif" />
@@ -38,6 +39,7 @@
     <AvaloniaResource Include="Assets\eays.gif" />
     <AvaloniaResource Include="Assets\exit.gif" />
     <AvaloniaResource Include="Assets\FontFamily\0.ttf" />
+    <AvaloniaResource Include="Assets\GenPassword.gif" />
     <AvaloniaResource Include="Assets\hide.gif" />
     <AvaloniaResource Include="Assets\load.gif" />
     <AvaloniaResource Include="Assets\loadAndBackgroundWindow.gif" />
@@ -115,5 +117,10 @@
     <Compile Update="Views\PageLabWork\LabWork12_14_21.axaml.cs">
       <DependentUpon>LabWork12_14_21.axaml</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Assets\password.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

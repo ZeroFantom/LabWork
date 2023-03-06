@@ -49,9 +49,9 @@ namespace LabWork.ViewModels.PageLabWork
 
             using var archive = ZipFile.OpenRead(ArhiveName);
 
-            var filterFunc = IsEnableDirectory ?
-                (Func<ZipArchiveEntry, bool>)(x => !x.FullName.Contains(".")) :
-                (Func<ZipArchiveEntry, bool>)(x => x.FullName.Contains("."));
+            Func<ZipArchiveEntry, bool> filterFunc = IsEnableDirectory ?
+                x => !x.FullName.Contains(".") :
+                x => x.FullName.Contains(".");
 
             Data.ObjectDataReport.AddRange(archive.Entries.Where(filterFunc).Select(x =>
             {

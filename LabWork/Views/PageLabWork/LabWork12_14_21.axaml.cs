@@ -2,9 +2,9 @@ using static LabWork.ViewModels.PageLabWork.LabWork12_14_21ViewModel;
 
 namespace LabWork.Views.PageLabWork
 {
-    public partial class LabWork12_14_21 : UserControl
+    public partial class LabWork121421 : UserControl
     {
-        public LabWork12_14_21()
+        public LabWork121421()
         {
             InitializeComponent();
         }

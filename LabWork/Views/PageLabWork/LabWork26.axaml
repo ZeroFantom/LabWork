@@ -1,0 +1,59 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:avaloniaGif="clr-namespace:LabWork.AvaloniaGIF"
+             mc:Ignorable="d"
+             x:Class="LabWork.Views.PageLabWork.LabWork26">
+  
+  <Grid ColumnDefinitions="1*,2*,5*,1*" RowDefinitions="20,*">
+    <Border Grid.Row="1" Grid.Column="1" CornerRadius="5" BoxShadow="0 0 8 4 Black" VerticalAlignment="Center" Background="{Binding BackGroundWindow}" HorizontalAlignment="Center" DockPanel.Dock="Left">
+      <StackPanel>
+        <Border BorderThickness="1,1,1,0" BorderBrush="Cyan" CornerRadius="5,5,0,0">
+          <TextBlock Text="[ Приложение для отправки сетевых запросов ]" FontSize="18" HorizontalAlignment="Center"/>
+        </Border>
+        <Separator/>
+        <StackPanel>
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Text="    Введите id:" FontSize="16"/>
+            <TextBox x:Name="UserIdBox" Text="{Binding UserId}" FontSize="16"/>
+          </StackPanel>
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Text="    Введите ссыли на файл:" FontSize="16"/>
+            <TextBox x:Name="UserSiteBox" Text="{Binding UserSite}" FontSize="16"/>
+          </StackPanel>
+          <Separator/>
+          <StackPanel>
+            <TextBlock Text="{Binding PostsUsers}" FontSize="16"/>
+            <TextBlock Text="{Binding UsersCount}" FontSize="16"/>
+            <TextBlock Text="{Binding MidleUserPost}" FontSize="16"/>
+          </StackPanel>
+        </StackPanel>
+
+        <Button x:Name="AllPostButton" Classes="menuButton" Content="Получить все посты" Click="AllPostButton_OnClick" HorizontalAlignment="Stretch"/>
+        <Button x:Name="OneIdPostButton" Classes="menuButton" Content="Получить посты определённого пользователя" Click="OneIdPostButton_OnClick" HorizontalAlignment="Stretch"/>
+        <Button x:Name="DownloadImageButton" Classes="menuButton" Content="Получить файл" Click="DownloadImageButton_OnClick" HorizontalAlignment="Stretch"/>
+        <Button x:Name="ListPadButton" Classes="menuButton" Content="Получить список падежей с сайта" Click="ListPadButton_OnClick" HorizontalAlignment="Stretch"/>
+
+        <Border BorderThickness="1,0,1,1" BorderBrush="Cyan" CornerRadius="0,0,5,5" Height="50"/>
+      </StackPanel>
+    </Border>
+
+    <Border Grid.Row="1" Grid.Column="2" CornerRadius="5" BoxShadow="0 0 8 4 Black" VerticalAlignment="Center" Background="{Binding BackGroundWindow}" HorizontalAlignment="Center" DockPanel.Dock="Left">
+      <StackPanel>
+      <Border BorderThickness="1,1,1,0" BorderBrush="Cyan" CornerRadius="5,5,0,0">
+        <TextBlock Text="[ JSON ]" FontSize="18" HorizontalAlignment="Center"/> 
+      </Border>
+      <Separator/>
+      <StackPanel>
+        <ScrollViewer>
+          <TextBox x:Name="JsonTextBlock" FontSize="12" HorizontalContentAlignment="Left"/>
+        </ScrollViewer>
+      </StackPanel>
+
+      <Border BorderThickness="1,0,1,1" BorderBrush="Cyan" CornerRadius="0,0,5,5" Height="50"/>
+      </StackPanel>
+    </Border>
+    
+  </Grid>
+</UserControl>

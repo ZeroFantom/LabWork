@@ -55,6 +55,8 @@
                   <TextBlock Text="МЕНЮ" Height="50" FontSize="19" VerticalAlignment="Bottom" Foreground="Cyan"/>
                 </Border>
 
+                <Button x:Name="LabWork22Button" Classes="menuButton" Content="Регистрация данных" Click="LabWork22_OnClick"/>
+                <Button x:Name="LabWork26Button" Classes="menuButton" Content="Сетевое взаимодействие" Click="LabWork26_OnClick"/>
                 <Button x:Name="LabWork12_14Button" Classes="menuButton" Content="Проводник" Click="LabWork12_14_OnClick"/>
                 <Button x:Name="LabWork19Button" Classes="menuButton" Content="Архиватор" Click="LabWork19_OnClick"/>
                 <Button x:Name="LabWork15Button" Classes="menuButton" Content="Презентация фоток" Click="LabWork15_OnClick"/>

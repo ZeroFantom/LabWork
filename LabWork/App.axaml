@@ -3,6 +3,7 @@
              xmlns:viewModels="clr-namespace:LabWork.ViewModels"
              xmlns:labWork12="clr-namespace:LabWork"
              x:Class="LabWork.App">
+  
   <Application.DataTemplates>
     <labWork12:ViewLocator/>
   </Application.DataTemplates>
@@ -13,14 +14,14 @@
 
   <TrayIcon.Icons>
     <TrayIcons>
-      <TrayIcon Icon="Assets/Studio.ico" ToolTipText="Платформа DarkLie ЛабВерсия."/>
+      <TrayIcon Icon="/Assets/Studio.ico" ToolTipText="Платформа DarkLie"/>
     </TrayIcons>
   </TrayIcon.Icons>
 
   <Application.Styles>
     <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml"/>
     <FluentTheme DensityStyle="Compact"/>
-    
+
     <Style Selector="TextBlock">
       <Style.Setters>
         <Setter Property="FontFamily" Value="{Binding FontWindow}"/>
@@ -70,6 +71,7 @@
       </Style.Setters>
     </Style>
 
+
     <Style Selector="Border.windowDecorate">
       <Style.Setters>
         <Setter Property="Background" Value="{Binding BackGroundWindow}"/>
@@ -90,6 +92,7 @@
         <Setter Property="IsVisible" Value="False"/>
         <Setter Property="Tag" Value="TitleBar"/>
         <Setter Property="Orientation" Value="Horizontal"/>
+        <Setter Property="FlowDirection" Value="RightToLeft"/>
       </Style.Setters>
     </Style>
 
@@ -126,7 +129,7 @@
         <Setter Property="FontSize" Value="8"/>
       </Style.Setters>
     </Style>
-
+    
     <Style Selector="Button.menuButton">
       <Style.Setters>
         <Setter Property="Background" Value="{Binding BackGroundWindow}"/>
@@ -148,13 +151,13 @@
       <Style.Animations>
         <Animation Duration="0:0:5" PlaybackDirection="AlternateReverse" IterationCount="Infinite">
           <KeyFrame Cue="0%">
-            <Setter Property="Button.Foreground" Value="{Binding ForeGroundWindow}"/>
+            <Setter Property="Foreground" Value="{Binding ForeGroundWindow}"/>
           </KeyFrame>
           <KeyFrame Cue="50%">
-            <Setter Property="Button.Foreground" Value="{Binding BackGroundWindow}"/>
+            <Setter Property="Foreground" Value="{Binding BackGroundWindow}"/>
           </KeyFrame>
           <KeyFrame Cue="100%">
-            <Setter Property="Button.Foreground" Value="{Binding ForeGroundWindow}"/>
+            <Setter Property="Foreground" Value="{Binding ForeGroundWindow}"/>
           </KeyFrame>
         </Animation>
       </Style.Animations>

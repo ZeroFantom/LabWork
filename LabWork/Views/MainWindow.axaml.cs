@@ -2,6 +2,8 @@ using static LabWork.ViewModels.PageLabWork.LabWork19ViewModel;
 using static LabWork.ViewModels.PageLabWork.LabWork15ViewModel;
 using static LabWork.ViewModels.AdditionalFunctionality.DataReportViewModel;
 using static LabWork.ViewModels.PageLabWork.LabWork12_14_21ViewModel;
+using static LabWork.ViewModels.PageLabWork.LabWork22ViewModel;
+using static LabWork.ViewModels.PageLabWork.LabWork26ViewModel;
 
 namespace LabWork.Views
 {
@@ -19,7 +21,7 @@ namespace LabWork.Views
             };
 
         private void LabWork12_14_OnClick(object? sender, RoutedEventArgs e)
-            => InstaMainWindowViewModel.Page = new LabWork12_14_21
+            => InstaMainWindowViewModel.Page = new LabWork121421
             {
                 DataContext = InstancelabWork121421ViewModel
             };
@@ -39,5 +41,16 @@ namespace LabWork.Views
                 DataContext = InstancelabWork15ViewModel
             };
         }
+
+        private void LabWork26_OnClick(object? sender, RoutedEventArgs e)
+            => InstaMainWindowViewModel.Page = new LabWork26()
+            {
+                DataContext = LabWork26ViewModelInstanse
+            };
+        private void LabWork22_OnClick(object? sender, RoutedEventArgs e)
+            => InstaMainWindowViewModel.Page = new LabWork22
+            {
+                DataContext = LabWork22ViewModelInstanse
+            };
     }
 }
